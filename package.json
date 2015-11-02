@@ -1,0 +1,40 @@
+{
+  "name": "serkanio",
+  "version": "1.0.0",
+  "description": "my personal website",
+  "main": "app/index.ts",
+  "scripts": {
+    "test": "karma start",
+    "start": "./node_modules/.bin/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serkanyersen/serkanio.git"
+  },
+  "keywords": [
+    "personal",
+    "serkan",
+    "yersen",
+    "website"
+  ],
+  "author": "Serkan Yersen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serkanyersen/serkanio/issues"
+  },
+  "homepage": "https://github.com/serkanyersen/serkanio#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.45",
+    "css-loader": "^0.21.0",
+    "es6-promise": "^3.0.2",
+    "file-loader": "^0.8.4",
+    "node-sass": "^3.4.1",
+    "reflect-metadata": "^0.1.2",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.6.0",
+    "typescript": "^1.6.2",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
