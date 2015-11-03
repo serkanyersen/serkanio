@@ -1,5 +1,6 @@
 'use strict';
 require('es6-promise').polyfill();
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	resolve: {
@@ -14,17 +15,19 @@ module.exports = {
 	entry: './app/index.ts',
 	
 	output: {
-		path: __dirname,
-		filename: 'dist/bundle.js'
+		path: __dirname + '/app/dist/',
+		publicPath: '/dist/',
+		filename: 'bundle.js'
 	},
-	
+	target: 'web',
+	devtool: 'inline-source-map',
 	module: {
         loaders: [{
 			test:   /\.scss$/,
-			loader: 'style!css!sass'
+			loader: ExtractTextPlugin.extract('style-loader', '!css?sourceMap!sass?sourceMap')
 		}, {
 			test: /\.sass$/,
-			loader: 'style!css!sass?indentedSyntax'
+			loader: ExtractTextPlugin.extract('style-loader', 'css!sass?indentedSyntax&sourceMap')
 		}, {
 			test: /\.ts$/,
 			loader: 'ts-loader'
@@ -33,4 +36,7 @@ module.exports = {
 			loader: 'html'
 		}]
     },
+	plugins: [
+		new ExtractTextPlugin('bundle.css', { allChunks: true })
+	]
 }
