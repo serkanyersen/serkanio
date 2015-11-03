@@ -1,10 +1,12 @@
 import {Component, View} from 'angular2/angular2';
+import './styles/main';
+var template = require('./partials/main');
 
 @Component({
 	selector: 'app'
 })
 @View({
-	template: 'Hello World'
+	template
 })
 export default class App {
 }

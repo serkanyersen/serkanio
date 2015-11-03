@@ -1,0 +1,59 @@
+@import "../../../styles/flexbox";
+
+body {
+	@extend %flexbox;
+	@include justify-content(center);
+}
+
+header, footer{
+	padding: 1em;
+}
+
+app {
+	@extend %flexbox;
+	min-height: 100vh;
+	@include flex-direction(column);
+	width: 900px;
+}
+
+.Container{
+	@extend %flexbox;
+	@include flex(1);
+	@include flex-direction(column);
+}
+
+.Content{
+	@include flex(1);
+	background-color: #BCD39B;
+}
+
+.Sidebar{
+	@include order(-1);
+	@include flex(0 0 12em);
+	background-color: #CE9B64;
+}
+
+.Secondary{
+	@include flex(0 0 12em);
+	background-color: #62626D;
+}
+
+.Content, .Sidebar, .Secondary{
+
+}
+
+/* mobile layout */
+@media (min-width: 768px){
+	.Container {
+		@include flex-direction(row);
+		@include flex(1);
+	}
+
+	.Sidebar, .Secondary {
+		@include flex(0 0 12em);
+	}
+
+	.Content {
+		@include flex(1);
+	}
+}
