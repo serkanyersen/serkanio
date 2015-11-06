@@ -1,12 +1,17 @@
 import {Component, View} from 'angular2/angular2';
 import './styles/main';
-var template = require('./partials/main');
+import Header from '../header';
+import Footer from '../footer';
+var template:string = require('./partials/main');
 
 @Component({
-	selector: 'app'
+	selector: 'app',
 })
 @View({
-	template
+	template,
+	directives: [Header, Footer]
 })
 export default class App {
+	constructor(){
+	}
 }
