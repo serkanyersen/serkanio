@@ -1,6 +1,6 @@
 var config = require('./webpack.config.js');
 var webpack = require('webpack');
-console.log(config);
+
 // Remove dev properties
 config.cache = false;
 config.devtool = null;
